@@ -1,7 +1,7 @@
 """Integration tests for the demo service — run automatically in CI."""
 from fastapi.testclient import TestClient
 
-from app.main import app
+from main import app
 
 client = TestClient(app)
 

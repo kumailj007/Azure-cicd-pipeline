@@ -11,8 +11,8 @@ param location string = resourceGroup().location
 @description('Globally-unique web app name')
 param webAppName string = 'az400-demo-${uniqueString(resourceGroup().id)}'
 
-@description('Container image to run, e.g. ghcr.io/<user>/az400-demo:latest')
-param containerImage string = 'mcr.microsoft.com/azuredocs/aci-helloworld:latest'
+@description('Container image to run, e.g. ghcr.io/<user>/az400-demo:<sha>. Supplied by the pipeline; no default so a deploy can never silently ship the wrong image.')
+param containerImage string
 
 var tags = {
   project: 'az400-cicd-demo'

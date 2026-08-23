@@ -71,6 +71,7 @@ jobs:
     needs: [ build-image ]
     runs-on: ubuntu-latest
     if: ${{ vars.ENABLE_DEPLOY == 'true' }}
+    environment: production
     steps:
       - uses: actions/checkout@v4
       - uses: azure/login@v2
